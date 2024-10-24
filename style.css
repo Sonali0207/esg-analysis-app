@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 header {
@@ -27,7 +28,7 @@ nav ul li a {
 }
 
 .hero-section {
-    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fphotos%2Fnature&psig=AOvVaw24uil9MpUdyxRiuETXY7Vx&ust=1729859451185000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCND55-GCp4kDFQAAAAAdAAAAABAJ'); /* Replace with your image URL */
+    background-image: url('background.jpg'); /* Replace with your image file name */
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -48,17 +49,61 @@ nav ul li a {
     background-color: #f4f4f4;
 }
 
+#info h2 {
+    color: #333;
+}
+
+#info p {
+    color: #555;
+}
+
 #esg-calculation {
     padding: 20px;
     background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+#esg-calculation h2 {
+    color: #333;
+}
+
+#esg-calculation form {
+    margin-bottom: 20px;
+}
+
+#esg-calculation input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#esg-calculation button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#esg-calculation button:hover {
+    background-color: #45a049;
+}
+
+#esg-result, #esg-insights {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#graph-container {
+    margin-top: 20px;
+    height: 300px; /* Placeholder for graph */
 }
 
 footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
 
 
