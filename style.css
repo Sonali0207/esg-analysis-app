@@ -7,16 +7,50 @@ body {
 header {
     background-color: #4CAF50;
     color: white;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
 }
 
-main {
-    padding: 20px;
+nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-h2 {
-    color: #333;
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero-section {
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fphotos%2Fnature&psig=AOvVaw24uil9MpUdyxRiuETXY7Vx&ust=1729859451185000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCND55-GCp4kDFQAAAAAdAAAAABAJ'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+#info {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+#esg-calculation {
+    padding: 20px;
+    background-color: #ffffff;
 }
 
 footer {
@@ -24,7 +58,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
 }
+
+
+
