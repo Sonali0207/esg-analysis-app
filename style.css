@@ -28,7 +28,7 @@ nav ul li a {
 }
 
 .hero-section {
-    background-image: url('background.jpg'); /* Replace with your image file name */
+    background-image: url('background.jpg');/* Replace with your image file name */
     background-size: cover;
     background-position: center;
     height: 300px;
