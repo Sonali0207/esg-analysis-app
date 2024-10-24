@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #2E8B57; /* Change header color to a darker green */
     color: white;
     padding: 10px;
     text-align: center;
@@ -46,7 +46,7 @@ nav ul li a {
 
 #info {
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #f0f8ff; /* Change main section background color to light blue */
 }
 
 #info h2 {
@@ -59,7 +59,7 @@ nav ul li a {
 
 #esg-calculation {
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #f0f8ff; /* Change calculator section background color to light blue */
     border: 1px solid #ddd;
     border-radius: 5px;
     margin: 20px;
@@ -82,7 +82,7 @@ nav ul li a {
 }
 
 #esg-calculation button {
-    background-color: #4CAF50;
+    background-color: #2E8B57; /* Change button color to match header */
     color: white;
     padding: 10px 15px;
     border: none;
@@ -91,7 +91,7 @@ nav ul li a {
 }
 
 #esg-calculation button:hover {
-    background-color: #45a049;
+    background-color: #248B5B; /* Slightly darker on hover */
 }
 
 #esg-result, #esg-insights {
@@ -105,7 +105,7 @@ nav ul li a {
 }
 
 footer {
-    background-color: #4CAF50;
+    background-color: #2E8B57; /* Change footer color to match header */
     color: white;
     text-align: center;
     padding: 10px;
@@ -113,5 +113,6 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 
 
