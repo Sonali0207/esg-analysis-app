@@ -2,20 +2,18 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 header {
-    background-color: orange;
-    padding: 20px;
+    background-color: #FFA500; /* Orange color for header */
+    color: white;
+    padding: 10px;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-}
-
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
@@ -29,26 +27,90 @@ nav ul li a {
     text-decoration: none;
 }
 
-main {
-    background-image: url('https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+.hero-section {
+    background-image: url('https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Nature image from Pexels */
     background-size: cover;
-    padding: 20px;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.8); /* Light pastel white */
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.intro, .calculator, .theory {
-    background-color: rgba(255, 255, 255, 0.9);
+.hero-section h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+#info {
     padding: 20px;
-    margin: 10px 0;
+    background-color: #f9f9f9; /* Very light pastel color */
+}
+
+#info h2 {
+    color: #333;
+}
+
+#info p {
+    color: #555;
+}
+
+#esg-calculation {
+    padding: 20px;
+    background-color: #f9f9f9; /* Very light pastel color */
+    border: 1px solid #ddd;
     border-radius: 5px;
+    margin: 20px;
+}
+
+#esg-calculation h2 {
+    color: #333;
+}
+
+#esg-calculation form {
+    margin-bottom: 20px;
+}
+
+#esg-calculation input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#esg-calculation button {
+    background-color: #FFA500; /* Orange color for button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#esg-calculation button:hover {
+    background-color: #FF8C00; /* Slightly darker orange on hover */
+}
+
+#esg-result, #esg-insights {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#graph-container {
+    margin-top: 20px;
+    height: 300px; /* Placeholder for graph */
 }
 
 footer {
-    background-color: orange;
-    padding: 10px;
+    background-color: #FFA500; /* Orange color for footer */
+    color: white;
     text-align: center;
-    position: fixed;
+    padding: 10px;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
+
