@@ -3,27 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESG Rating Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    <title>ESG Matrices Dashboard</title>
 </head>
 <body>
     <header>
-        <h1>ESG Ratings Dashboard</h1>
+        <h1>ESG Matrices Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Reports</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
-        <section class="info">
+        <div class="intro">
+            <h2>What is ESG?</h2>
+            <p>The Environmental, Social, and Governance (ESG) criteria help to better determine the future financial performance of companies (return and risk).</p>
+        </div>
+
+        <div class="calculator">
             <h2>Calculate ESG Rating</h2>
-            <input type="text" id="companyName" placeholder="Enter Company Ticker (e.g., AAPL)">
+            <input type="text" id="companyName" placeholder="Enter company ticker" />
             <button onclick="getEsgRating()">Calculate ESG Rating</button>
-        </section>
-        <section class="results">
-            <h2>ESG Results</h2>
             <div id="esgData"></div>
-        </section>
+        </div>
+
+        <div class="theory">
+            <h3>Theory Behind ESG Scores</h3>
+            <p><strong>Environmental Impact:</strong> The Environmental Score evaluates a company’s commitment to preserving natural resources, managing waste, reducing emissions, and utilizing renewable energy. It reflects a company’s responsibility towards mitigating climate change and environmental degradation.</p>
+            <p><strong>Social Responsibility:</strong> The Social Score highlights a company’s impact on its employees, customers, and communities. It measures factors like employee satisfaction, community engagement, health and safety, and workforce diversity.</p>
+            <p><strong>Governance Policies:</strong> The Governance Score measures a company’s adherence to ethical business practices, transparency, and strong leadership. It focuses on board diversity, executive compensation, anti-corruption policies, and shareholder rights.</p>
+        </div>
     </main>
+
     <footer>
-        <p>Contact Info: your-email@example.com</p>
+        <p>Contact Info: info@esgdashboard.com</p>
+        <p>&copy; 2024 ESG Matrices Dashboard</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
