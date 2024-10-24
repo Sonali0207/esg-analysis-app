@@ -3,7 +3,7 @@ async function calculateESG() {
 
     try {
         // Replace with your actual API endpoint and key
-        const response = await fetch(`https://api.esgenterprise.com/api/v1/esg?company=${encodeURIComponent(companyName)}&apikey=csd7hb9r01qi0n6el2lgcsd7hb9r01qi0n6el2m0`);
+        const response = await fetch(``https://finnhub.io/api/v1/stock/esg?symbol=${companyName}&token=${csd7hb9r01qi0n6el2lgcsd7hb9r01qi0n6el2m0}`;`);
 
         // Check if the response is okay
         if (!response.ok) {
