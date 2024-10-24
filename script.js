@@ -1,40 +1,31 @@
-async function calculateESG() {
-    const companyName = document.getElementById('company-name').value;
+const API_KEY = '33KEH1W2QQ2SV961'; // Replace with your actual API key from Alpha Vantage
 
-    try {
-        // Replace with your actual API endpoint and key
-        const response = await fetch(``https://finnhub.io/api/v1/stock/esg?symbol=${companyName}&token=${csd7hb9r01qi0n6el2lgcsd7hb9r01qi0n6el2m0}`;`);
+function fetchESGRating() {
+    const companyName = document.getElementById('companyName').value;
+    const url = `https://www.alphavantage.co/query?function=ESG&symbol=${companyName}&apikey=${API_KEY}`;
 
-        // Check if the response is okay
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-        const data = await response.json();
-
-        // Assuming the API returns the ESG scores in the following format
-        const environmentalScore = data.environmental; // Adjust according to the API response
-        const socialScore = data.social; // Adjust according to the API response
-        const governanceScore = data.governance; // Adjust according to the API response
-
-        // Calculate overall ESG rating
-        const esgRating = ((environmentalScore + socialScore + governanceScore) / 3).toFixed(2);
-
-        // Display results
-        document.getElementById('esg-result').innerHTML = `
-            <h3>ESG Rating for ${companyName}: ${esgRating}</h3>
-            <p><strong>Environmental Score:</strong> ${environmentalScore}</p>
-            <p><strong>Social Score:</strong> ${socialScore}</p>
-            <p><strong>Governance Score:</strong> ${governanceScore}</p>
-        `;
-
-    } catch (error) {
-        document.getElementById('esg-result').innerHTML = `
-            <p>Error fetching ESG data: ${error.message}</p>
-        `;
-    }
-
-    // Clear the input field
-    document.getElementById('company-name').value = '';
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.Note) {
+                document.getElementById('esgResult').innerHTML = 'API limit reached. Please try again later.';
+                return;
+            }
+            if (data.Error) {
+                document.getElementById('esgResult').innerHTML = 'Company not found. Please check the ticker symbol.';
+                return;
+            }
+            const esgRating = `
+                <h4>ESG Rating for ${companyName}</h4>
+                <p>Environmental Score: ${data.environmental_score || 'N/A'}</p>
+                <p>Social Score: ${data.social_score || 'N/A'}</p>
+                <p>Governance Score: ${data.governance_score || 'N/A'}</p>
+            `;
+            document.getElementById('esgResult').innerHTML = esgRating;
+        })
+        .catch(error => {
+            console.error('Error fetching ESG data:', error);
+            document.getElementById('esgResult').innerHTML = 'Failed to fetch ESG data.';
+        });
 }
 
