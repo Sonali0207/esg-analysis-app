@@ -1,13 +1,15 @@
-function calculateESG() {
-    const environmental = parseFloat(document.getElementById("environmental").value);
-    const social = parseFloat(document.getElementById("social").value);
-    const governance = parseFloat(document.getElementById("governance").value);
+document.getElementById('esg-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const dataInput = document.getElementById('data-input').value;
+    
+    // Placeholder for ESG calculation logic
+    const esgScore = calculateESG(dataInput);
+    
+    document.getElementById('esg-result').innerText = `ESG Score: ${esgScore}`;
+});
 
-    if (isNaN(environmental) || isNaN(social) || isNaN(governance)) {
-        alert("Please enter valid numbers for all scores.");
-        return;
-    }
-
-    const esgScore = ((environmental + social + governance) / 3).toFixed(2);
-    document.getElementById("esg-score").textContent = `The ESG Score is: ${esgScore}`;
+// Placeholder function for ESG calculation
+function calculateESG(data) {
+    // Your ESG calculation logic will go here
+    return Math.random() * 100; // Random score for now
 }
