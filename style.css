@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #2E8B57; /* Change header color to a darker green */
+    background-color: #FFA500; /* Orange color for header */
     color: white;
     padding: 10px;
     text-align: center;
@@ -28,7 +28,7 @@ nav ul li a {
 }
 
 .hero-section {
-    background-image: url('https://images.pexels.com/photos/6740104/pexels-photo-6740104.jpeg'); /* Nature image from Pexels */
+    background-image: url('https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Nature image from Pexels */
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -46,7 +46,7 @@ nav ul li a {
 
 #info {
     padding: 20px;
-    background-color: #f0f8ff; /* Change main section background color to light blue */
+    background-color: #f9f9f9; /* Very light pastel color */
 }
 
 #info h2 {
@@ -59,7 +59,7 @@ nav ul li a {
 
 #esg-calculation {
     padding: 20px;
-    background-color: #f0f8ff; /* Change calculator section background color to light blue */
+    background-color: #f9f9f9; /* Very light pastel color */
     border: 1px solid #ddd;
     border-radius: 5px;
     margin: 20px;
@@ -82,7 +82,7 @@ nav ul li a {
 }
 
 #esg-calculation button {
-    background-color: #2E8B57; /* Change button color to match header */
+    background-color: #FFA500; /* Orange color for button */
     color: white;
     padding: 10px 15px;
     border: none;
@@ -91,7 +91,7 @@ nav ul li a {
 }
 
 #esg-calculation button:hover {
-    background-color: #248B5B; /* Slightly darker on hover */
+    background-color: #FF8C00; /* Slightly darker orange on hover */
 }
 
 #esg-result, #esg-insights {
@@ -105,7 +105,7 @@ nav ul li a {
 }
 
 footer {
-    background-color: #2E8B57; /* Change footer color to match header */
+    background-color: #FFA500; /* Orange color for footer */
     color: white;
     text-align: center;
     padding: 10px;
@@ -113,6 +113,3 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
-
-
