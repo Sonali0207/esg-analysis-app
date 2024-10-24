@@ -3,52 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESG Matrices Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>ESG Rating Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#reports">Reports</a></li>
-            </ul>
-        </nav>
+        <h1>ESG Ratings Dashboard</h1>
     </header>
-
     <main>
-        <section id="hero" class="hero-section">
-            <h1>ESG MATRICES DASHBOARD</h1>
+        <section class="info">
+            <h2>Calculate ESG Rating</h2>
+            <input type="text" id="companyName" placeholder="Enter Company Ticker (e.g., AAPL)">
+            <button onclick="getEsgRating()">Calculate ESG Rating</button>
         </section>
-
-        <section id="info">
-    <h2>ESG Analysis Overview</h2>
-    <p><strong>Environmental Impact:</strong> The Environmental Score evaluates a company’s commitment to preserving natural resources, managing waste, reducing emissions, and utilizing renewable energy. It reflects a company’s responsibility towards mitigating climate change and environmental degradation.</p>
-    <p><strong>Social Responsibility:</strong> The Social Score highlights a company’s impact on its employees, customers, and communities. It measures factors like employee satisfaction, community engagement, health and safety, and workforce diversity.</p>
-    <p><strong>Governance Policies:</strong> The Governance Score measures a company’s adherence to ethical business practices, transparency, and strong leadership. It focuses on board diversity, executive compensation, anti-corruption policies, and shareholder rights.</p>
-</section>
-
-
-        <section id="esg-calculation">
-    <h2>Calculate ESG Rating</h2>
-    <form id="esg-form">
-        <input type="text" id="company-name" placeholder="Enter Company Name" required>
-        <button type="button" onclick="calculateESG()">Calculate ESG Rating</button>
-    </form>
-    <div id="esg-result"></div>
-    <div id="esg-insights"></div>
-    <div id="graph-container">
-        <!-- Placeholder for the graph -->
-    </div>
-</section>
-
+        <section class="results">
+            <h2>ESG Results</h2>
+            <div id="esgData"></div>
+        </section>
     </main>
-
     <footer>
-        <p>Contact us at: <a href="mailto:info@esgdashboard.com">info@esgdashboard.com</a></p>
-        <p>&copy; 2024 ESG Matrices Dashboard</p>
+        <p>Contact Info: your-email@example.com</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
