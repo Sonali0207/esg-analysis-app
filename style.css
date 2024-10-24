@@ -1,47 +1,54 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Nature background image */
-    background-size: cover;
-    background-position: center;
-    color: #333;
     margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: #ffa500; /* Orange color for header */
-    color: white;
-    padding: 1em;
+    background-color: orange;
+    padding: 20px;
     text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
 }
 
 main {
+    background-image: url('https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Light white background for main section */
-    border-radius: 10px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8); /* Light pastel white */
 }
 
-.info {
-    margin-bottom: 20px;
-}
-
-.theory {
-    margin: 20px 0;
-}
-
-.results {
-    background-color: #ffffff; /* White color for results */
+.intro, .calculator, .theory {
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
+    margin: 10px 0;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background-color: #ffa500; /* Orange color for footer */
-    color: white;
-    text-align: center;
+    background-color: orange;
     padding: 10px;
-    position: relative;
+    text-align: center;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
-
