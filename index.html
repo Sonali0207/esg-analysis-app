@@ -31,18 +31,12 @@
 </section>
 
 
-       <section id="esg-calculation">
-    <h2>Calculate ESG Rating</h2>
-    <form id="esg-form">
-        <input type="text" id="company-name" placeholder="Enter Company Name" required>
-        <button type="button" onclick="calculateESG()">Calculate ESG Rating</button>
-    </form>
-    <div id="esg-result"></div>
-    <div id="esg-insights"></div>
-    <div id="graph-container">
-        <!-- Placeholder for the graph -->
-    </div>
-</section>
+<section class="calculator">
+            <h3>Calculate ESG Rating</h3>
+            <input type="text" id="companyName" placeholder="Enter company ticker symbol">
+            <button onclick="fetchESGRating()">Get ESG Rating</button>
+            <div id="esgResult"></div>
+        </section>
 
 
     </main>
