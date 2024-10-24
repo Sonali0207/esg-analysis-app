@@ -3,16 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESG Analysis Application</title>
+    <title>ESG Matrices Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>ESG Analysis Application</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reports">Reports</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
+        <section id="hero" class="hero-section">
+            <h1>ESG MATRICES DASHBOARD</h1>
+        </section>
+
+        <section id="info">
+            <h2>About ESG</h2>
+            <p>ESG stands for Environmental, Social, and Governance. This framework helps in assessing the sustainability and societal impact of investments...</p>
+        </section>
+
         <section id="esg-calculation">
             <h2>ESG Calculation</h2>
             <form id="esg-form">
@@ -21,25 +36,16 @@
                 <button type="submit">Calculate ESG</button>
             </form>
             <div id="esg-result"></div>
-        </section>
-
-        <section id="graphs">
-            <h2>Graphs</h2>
+            <div id="esg-insights"></div>
             <div id="graph-container">
-                <!-- Graphs will be rendered here -->
-            </div>
-        </section>
-
-        <section id="chatbot">
-            <h2>Chatbot for Analysis</h2>
-            <div id="chatbot-container">
-                <!-- Chatbot will be integrated here -->
+                <!-- Placeholder for graphs -->
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 ESG Analysis Application</p>
+        <p>Contact us at: <a href="mailto:info@esgdashboard.com">info@esgdashboard.com</a></p>
+        <p>&copy; 2024 ESG Matrices Dashboard</p>
     </footer>
 </body>
 </html>
