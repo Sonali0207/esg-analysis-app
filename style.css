@@ -28,7 +28,7 @@ nav ul li a {
 }
 
 .hero-section {
-    background-image: url(https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);/* Replace with your image file name */
+    background-image: url('https://images.pexels.com/photos/6740104/pexels-photo-6740104.jpeg'); /* Nature image from Pexels */
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -105,5 +105,13 @@ nav ul li a {
 }
 
 footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
 
 
