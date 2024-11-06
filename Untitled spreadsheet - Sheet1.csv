@@ -1,0 +1,101 @@
+Rank,Company,Region,Country,Sector,Industry,ESG Score,Temperature Score (2050),Emissions: Tonnes of CO2e (Scope 1 & 2),Emissions: Tonnes of CO2e (Scope 3),Market Cap Category
+1,ASML Holdings N.V.,Europe,Netherlands,Electronic Technology,Semiconductors,73.13,1.5,"155,200","8,400,000",Mega
+2,Check Point Software Technologies,Middle East,Israel,Technology Services,Internet Software/Services,72.64,3,"15,323*",21.531*,Large
+3,Hermes International SCA,Europe,France,Consumer Non-Durables,Apparel/Footwear,71.71,1.5,"34,600","486,400",Large
+4,Linde,Europe,United Kingdom,Process Industries,Chemicals: Specialty,71.26,>2.7,"37,734,000","21,261,000",Large
+5,Kone Oyj,Europe,Finland,Producer Manufacturing,Building Products,70.37,1.5,"135,100","14,105,500",Large
+6,Shionogi & Co.,Asia,Japan,Health Technology,Pharmaceuticals: Major,70.04,1.5,"81,730","118,790",Large
+7,"Applied Materials, Inc.",North America,United States,Producer Manufacturing,Industrial Machinery,69.77,3,"303,311*","8,400",Large
+8,Beiersdorf AG,Europe,Germany,Consumer Non-Durables,Household/Personal Care,69.7,1.5,"102,027","1,041,703",Large
+9,Colgate-Palmolive Company,North America,United States,Consumer Non-Durables,Household/Personal Care,69.32,1.5,"577,679","41,966,000",Large
+10,L'Oreal S.A.,Europe,France,Consumer Non-Durables,Household/Personal Care,69.3,1.5,"55,778","11,169,000",Mega
+11,CLP Holdings Limited,Asia,Hong Kong,Utilities,Electric Utilities,68.74,2,"47,926,000","17,091,000",Large
+12,Unicharm Corporation,Asia,Japan,Consumer Non-Durables,Household/Personal Care,68.69,3,"466,000","1,942,000",Large
+13,Atlas Copco,Europe,Sweden,Producer Manufacturing,Industrial Machinery,68.67,1.5,"115,000","124,000",Large
+14,"Fortinet, Inc.",North America,United States,Electronic Technology,Computer Communications,68.49,1.5,"4,766","318,336*",Large
+15,Xylem Inc.,North America,United States,Producer Manufacturing,Industrial Machinery,68.48,1.5,"88,990","1,968,049",Large
+16,ABB Ltd.,Europe,Switzerland,Producer Manufacturing,Electrical Products,68.46,1.5,"537,000","6,126,000",Large
+17,Hong Kong Exchanges & Clearing Ltd.,Asia,Hong Kong,Finance,Investment Banks/Brokers,68.27,2,"19,288",978,Large
+18,Canadian Natural Resources Limited,North America,Canada,Energy Minerals,Oil & Gas Production,68.16,3,"9,030,736*","131,871,838",Large
+19,Geberit AG,Europe,Switzerland,Producer Manufacturing,Building Products,68.07,2,"206,553","767,119",Large
+20,Edwards Lifesciences Corporation,North America,United States,Health Technology,Medical Specialties,68.02,1.5,"47,759","31,264",Large
+21,Weyerhaeuser Company,North America,United States,Finance,Real Estate Investment Trusts,67.9,2,"1,019,681","6,100,000",Large
+22,Mondi plc,Europe,United Kingdom,Process Industries,Containers/Packaging,67.83,>2.7,"3,910,215","3,253,460",Large
+23,Geely Automobile Holdings Limited,Asia,Hong Kong,Consumer Durables,Motor Vehicles,67.77,1.5,"663,984","11.534,383*",Large
+24,Cognex Corporation,North America,United States,Electronic Technology,Electronic Equipment/Instruments,67.63,3,"16,451*","273,834*",Large
+25,Kao Corp.,Asia,Japan,Consumer Non-Durables,Household/Personal Care,67.61,2,"899,000","11,184,000",Large
+26,Logitech International S.A.,Europe,Switzerland,Electronic Technology,Computer Peripherals,67.58,1.5,"1,461","1,299,592",Large
+27,VERBUND AG,Europe,Austria,Utilities,Electric Utilities,67.48,2,"1,059,000","335,000",Large
+28,BYD Company,Asia,China,Consumer Durables,Motor Vehicles,67.34,3,"388,442*","16,536,868*",Mega
+29,Goodman Group,Pacific Rim,Australia,Finance,Real Estate Investment Trusts,67.34,2,"40,560","12,308",Large
+30,Li Ning Company Limited,Asia,China,Consumer Non-Durables,Apparel/Footwear,67.34,1.5,"4,735",-,Large
+31,Texas Instruments Incorporated,North America,United States,Electronic Technology,Semiconductors,67.27,2.7,"2,133,617","4,630",Large
+32,Marathon Oil Corporation,North America,United States,Energy Minerals,Oil & Gas Production,67.26,>2.7,"3,705,000","42,580,000",Large
+33,OMRON Corporation,Asia,Japan,Electronic Technology,Electronic Equipment/Instruments,67.19,1.5,"123,394","10,996,115",Large
+34,Tokyo Electron Ltd.,Asia,Japan,Producer Manufacturing,Industrial Machinery,67.16,1.5,"186,000","6,222,000",Large
+35,Keysight Technologies Inc,North America,United States,Electronic Technology,Electronic Equipment/Instruments,67.05,1.5,"88,314","99,445",Large
+36,Kesko Corporation,Europe,Finland,Retail Trade,Food Retail,66.96,2,"94,172","7,725,300",Large
+37,"Shiseido Company,Limited",Asia,Japan,Consumer Non-Durables,Household/Personal Care,66.77,1.5,"74,619","2,524,291",Large
+38,Kuehne & Nagel International AG,Europe,Switzerland,Transportation,Marine Shipping,66.76,3,14.983.702*,"13,200,000",Large
+38,"Freeport-McMoRan, Inc.",North America,United States,Non-Energy Minerals,Other Metals/Minerals,66.74,2.7,3.308.914,1.729.251,Large
+40,Canadian National Railway Company,North America,Canada,Transportation,Railroads,66.63,2,"5,397,665","2,304,935",Large
+41,Swatch Group Ltd.,Europe,Switzerland,Consumer Durables,Other Consumer Specialties,66.63,3,"80,443","2,034,232*",Large
+42,Schindler Holding AG,Europe,Switzerland,Producer Manufacturing,Industrial Machinery,66.53,1.5,"172,474","1,793,024",Large
+43,Kyocera Corporation,Asia,Japan,Electronic Technology,Electronic Equipment/Instruments,66.48,1.5,"843,548","4,451,465",Large
+44,"Williams-Sonoma, Inc.",North America,United States,Retail Trade,Specialty Stores,66.38,2,"76,261","3,442,879",Large
+45,"Arista Networks, Inc.",North America,United States,Electronic Technology,Computer Peripherals,66.36,1.5,"6,411","1,704,161",Large
+46,Remy Cointreau SA,Europe,France,Consumer Non-Durables,Beverages: Alcoholic,66.3,3,"40,740*","226,346*",Large
+47,Newmont Corporation,North America,United States,Non-Energy Minerals,Precious Metals,66.25,2,"3,230,524","5,097,648",Large
+48,Canadian Pacific Railway Limited,North America,Canada,Transportation,Railroads,66.19,2.7,"3,031,000","1,700,000",Large
+49,Phillips 66,North America,United States,Energy Minerals,Oil Refining/Marketing,66.19,>2.7,"30,100,000","313,000,000",Large
+50,MTR Corporation Limited,Asia,Hong Kong,Transportation,Other Transportation,66.13,3,"12,398,444*","3,137",Large
+51,"Murata Manufacturing Co., Ltd.",Asia,Japan,Electronic Technology,Electronic Production Equipment,66.08,2,"1,313,000","3,801,000",Large
+52,"Cadence Design Systems, Inc.",North America,United States,Technology Services,Packaged Software,65.97,3,"30,031","145,618",Large
+53,"Cisco Systems, Inc.",North America,United States,Electronic Technology,Telecommunications Equipment,65.97,1.5,"606,139","17,383,460",Mega
+54,Amorepacific Corp.,Asia,"Korea, Republic of",Consumer Non-Durables,Household/Personal Care,65.94,1.5,"52,326","1,667",Large
+55,Transurban Group Ltd.,Pacific Rim,Australia,Transportation,Other Transportation,65.81,1.5,"204,112","425,466",Large
+56,Schroders PLC,Europe,United Kingdom,Finance,Investment Managers,65.67,2,"4,103","2,621",Large
+57,Kikkoman Corporation,Asia,Japan,Consumer Non-Durables,Food: Specialty/Candy,65.65,3,"1,295,545*","1,013,309*",Large
+58,Vestas Wind Systems A/S,Europe,Denmark,Producer Manufacturing,Electrical Products,65.65,1.5,"73,000","9,790,000",Large
+59,Robert Half International Inc.,North America,United States,Commercial Services,Personnel Services,65.44,2,"6,923","59,708",Large
+60,InterContinental Hotels Group PLC,Europe,United Kingdom,Consumer Services,Hotels/Resorts/Cruise lines,65.3,2,"2,230,734","2,072,377",Large
+61,"Hasbro, Inc.",North America,United States,Consumer Durables,Recreational Products,65.28,1.5,"12,738","192,375",Large
+62,NVIDIA Corporation,North America,United States,Electronic Technology,Semiconductors,65.25,1.5,"108,313","2,074,450",Mega
+63,Coles Group Ltd.,Pacific Rim,Australia,Retail Trade,Food Retail,65.18,>2.7,"1,579,091","266,881",Large
+64,Singapore Telecommunications Limited,Asia,Singapore,Communications,Major Telecommunications,65.15,2,"164,436","14,892",Large
+65,Wheaton Precious Metals Corp,North America,Canada,Non-Energy Minerals,Precious Metals,65.13,3,"919,458*",80,Large
+66,Nitto Denko Corp.,Asia,Japan,Electronic Technology,Electronic Equipment/Instruments,65.08,2.7,"720,547","736,102",Large
+67,Red Electrica Corp. SA,Europe,Spain,Industrial Services,Engineering & Construction,65.04,2,"626,381","380,326",Large
+68,Suncor Energy Inc.,North America,Canada,Energy Minerals,Integrated Oil,65,>2.7,"20,855,852","122,900,000",Large
+69,General Electric Company,North America,United States,Producer Manufacturing,Industrial Machinery,64.96,1.5,"2,080,000","142,697,710*",Large
+70,ASM International N.V.,Europe,Netherlands,Producer Manufacturing,Industrial Machinery,64.96,1.5,"25,608","193,625*",Large
+71,"Jeronimo Martins, SGPS S.A.",Europe,Portugal,Retail Trade,Food Retail,64.84,>2.7,"1,061,826","27,511,251",Large
+72,Hess Corporation,North America,United States,Energy Minerals,Integrated Oil,64.84,>2.7,"2,858,971","43,395,391",Large
+73,"SG Holdings Co., Ltd.",Asia,Japan,Transportation,Air Freight/Couriers,64.83,1.5,"401,769","2,397,866",Large
+74,BANDAI NAMCO Holdings Inc.,Asia,Japan,Consumer Durables,Recreational Products,64.77,1.5,"42,118","1.545,769*",Large
+75,Advantest Corp.,Asia,Japan,Electronic Technology,Electronic Equipment/Instruments,64.76,1.5,"41,541","1,683,408",Large
+76,Reckitt Benckiser Group plc,Europe,United Kingdom,Consumer Non-Durables,Household/Personal Care,64.67,1.5,"395,098","24,904,114*",Large
+77,NIBE Industrier AB,Europe,Sweden,Consumer Durables,Electronics/Appliances,64.63,1.5,"30,662","655,858*",Large
+78,Yaskawa Electric Corporation,Asia,Japan,Producer Manufacturing,Industrial Machinery,64.49,1.5,"21,076","12,624,612",Large
+79,ASSA ABLOY AB,Europe,Sweden,Producer Manufacturing,Industrial Machinery,64.48,1.5,"233,425","838,424*",Large
+80,"HubSpot, Inc.",North America,United States,Technology Services,Packaged Software,64.45,3,"5,936*","56,957",Large
+81,Svenska Cellulosa AB SCA,Europe,Sweden,Process Industries,Pulp & Paper,64.44,2.7,"300,000","560,000",Large
+82,Spirax-Sarco Engineering PLC,Europe,United Kingdom,Producer Manufacturing,Industrial Machinery,64.43,1.5,"39,893","10,927",Large
+83,Munich Reinsurance Company,Europe,Germany,Finance,Multi-Line Insurance,64.39,2,"95,349","6,015",Large
+84,Kering SA,Europe,France,Consumer Non-Durables,Apparel/Footwear,64.37,1.5,"25,527","136,600",Large
+85,Woolworths Group Ltd,Pacific Rim,Australia,Retail Trade,Food Retail,64.36,2,"2,308,668","367,187",Large
+86,Visa Inc.,North America,United States,Commercial Services,Miscellaneous Commercial Services,64.36,2,"63,206","320,987",Mega
+87,"Align Technology, Inc.",North America,United States,Health Technology,Medical Specialties,64.34,3,"35,791*","392,228*",Large
+88,Novozymes A/S,Europe,Denmark,Process Industries,Chemicals: Specialty,64.32,2,"482,000","34,000",Large
+89,Trane Technologies plc,Europe,Ireland,Producer Manufacturing,Industrial Conglomerates,64.28,1.5,"412,814","64,266,750*",Large
+90,"J.B. Hunt Transport Services, Inc.",North America,United States,Transportation,Trucking,64.27,1.5,"1,907,524","1,577,235",Large
+91,Adobe Incorporated,North America,United States,Technology Services,Packaged Software,64.25,2,"61,018","438,209",Mega
+92,Sherwin-Williams Company,North America,United States,Process Industries,Industrial Specialties,64.17,1.5,"627,265","5,222",Large
+93,"Sompo Holdings,Inc.",Asia,Japan,Finance,Property/Casualty Insurance,64.09,2,"166,691","519,347",Large
+94,CSPC Pharmaceutical Group Limited,Asia,China,Health Technology,Pharmaceuticals: Major,63.98,3,"94,490*","590,887*",Large
+95,HOYA CORPORATION,Asia,Japan,Health Technology,Medical Specialties,63.98,3,"37,995*",758159*,Large
+96,"Industria de Diseno Textil, S.A.",Europe,Spain,Consumer Non-Durables,Apparel/Footwear,63.96,1.5,"375,577","13,341,462",Large
+97,Sysmex Corporation,Asia,Japan,Health Technology,Medical Specialties,63.96,3,"20,144*","16,691",Large
+98,3i Group plc,Europe,United Kingdom,Finance,Investment Managers,63.93,2,377,"2,666",Large
+99,Neste Corporation,Europe,Finland,Energy Minerals,Oil Refining/Marketing,63.93,>2.7,"2,347,000","35,000,000",Large
+100,Public Service Enterprise Group Inc,North America,United States,Utilities,Electric Utilities,63.91,2.7,"10,376,800","12,235,817",Large
