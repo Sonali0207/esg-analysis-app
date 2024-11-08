@@ -9,7 +9,7 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #FFB6C1; /* Pale peach color */
+    background-color: #FFFFE0; /* Pale peach color */
     color: #333; /* Dark text for readability */
     padding: 15px;
     text-align: center;
@@ -83,7 +83,7 @@ nav ul li a:hover {
 /* ESG Calculation Section */
 #esg-calculation {
     padding: 20px;
-    background-color: #FFEB3B; /* Light yellow */
+    background-color: #F5F5DC; /* Light yellow */
     border-radius: 8px;
     margin: 20px;
     box-shadow: 0 4px 8px rgba(255, 235, 59, 0.2);
@@ -152,7 +152,7 @@ nav ul li a:hover {
 
 /* Footer Styling */
 footer {
-    background-color: #FF6347; /* Tomato color footer */
+    background-color: #F8F6F0; /* Tomato color footer */
     color: white;
     text-align: center;
     padding: 15px;
