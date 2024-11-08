@@ -1,106 +1,79 @@
-const csvUrl = 'https://raw.githubusercontent.com/Sonali0207/esg-analysis-app/main/Untitled spreadsheet - Sheet1.csv'; // Replace with your actual CSV URL
+const csvUrl = 'https://raw.githubusercontent.com/Sonali0207/esg-analysis-app/main/Untitled spreadsheet - Sheet1.csv'; // Replace this with the actual URL of your CSV file
 
-let chart;  // To keep track of the chart instance for updates
-
+// Function to fetch and parse CSV data
 async function fetchESGData() {
-    const inputCompanyName = document.getElementById('companyName').value.trim().toLowerCase();
+    const companyName = document.getElementById('companyName').value;
 
-    try {
-        const response = await fetch(csvUrl);
-        const csvData = await response.text();
+    // Fetch the CSV file
+    const response = await fetch(csvUrl);
+    const csvText = await response.text();
 
-        Papa.parse(csvData, {
-            header: true,
-            skipEmptyLines: true,
-            complete: (results) => {
-                const data = results.data;
+    // Parse CSV using PapaParse
+    const parsedData = Papa.parse(csvText, {
+        header: true,
+        skipEmptyLines: true
+    });
 
-                // Find the company data by matching the company name
-                const companyData = data.find(row => row["Company"] && row["Company"].trim().toLowerCase() === inputCompanyName);
+    // Find the company data from the parsed CSV
+    const companyData = parsedData.data.find(row => row.Company.toLowerCase() === companyName.toLowerCase());
 
-                if (companyData) {
-                    // Display ESG Score only initially
-                    const esgScore = `
-                        <h4>ESG Information for ${companyData["Company"]}</h4>
-                        <p><strong>ESG Score:</strong> ${companyData["ESG Score"] || 'N/A'}</p>
-                        <button onclick="showMoreDetails()">More Details</button>
-                        <div id="moreDetails" style="display: none;">
-                            <p><strong>Rank:</strong> ${companyData["Rank"] || 'N/A'}</p>
-                            <p><strong>Region:</strong> ${companyData["Region"] || 'N/A'}</p>
-                            <p><strong>Country:</strong> ${companyData["Country"] || 'N/A'}</p>
-                            <p><strong>Sector:</strong> ${companyData["Sector"] || 'N/A'}</p>
-                            <p><strong>Industry:</strong> ${companyData["Industry"] || 'N/A'}</p>
-                            <p><strong>Temperature Score (2050):</strong> ${companyData["Temperature Score (2050)"] || 'N/A'}</p>
-                            <p><strong>Emissions (Scope 1 & 2):</strong> ${companyData["Emissions: Tonnes of CO2e (Scope 1 & 2)"] || 'N/A'}</p>
-                            <p><strong>Emissions (Scope 3):</strong> ${companyData["Emissions: Tonnes of CO2e (Scope 3)"] || 'N/A'}</p>
-                            <p><strong>Market Cap Category:</strong> ${companyData["Market Cap Category"] || 'N/A'}</p>
-                        </div>
-                    `;
-                    document.getElementById('esgResult').innerHTML = esgScore;
+    if (!companyData) {
+        document.getElementById('esgResult').innerHTML = 'Company not found. Please check the name and try again.';
+        return;
+    }
 
-                    // Plot data using Chart.js
-                    plotESGChart(companyData);
-                } else {
-                    document.getElementById('esgResult').innerHTML = 'Company not found in the data.';
-                }
+    // Display ESG Score
+    document.getElementById('esgResult').innerHTML = `
+        <h3>ESG Score for ${companyData.Company}</h3>
+        <p>ESG Score: ${companyData["ESG Score"]}</p>
+        <button onclick="showDetails('${companyData.Company}')">More Details</button>
+    `;
+
+    // Function to show more details when "More Details" is clicked
+    window.showDetails = function(companyName) {
+        const details = parsedData.data.find(row => row.Company.toLowerCase() === companyName.toLowerCase());
+        document.getElementById('esgResult').innerHTML = `
+            <h3>Details for ${details.Company}</h3>
+            <p><strong>Temperature Score (2050):</strong> ${details["Temperature Score (2050)"]}</p>
+            <p><strong>Emissions (Scope 1 & 2):</strong> ${details["Emissions: Tonnes of CO2e (Scope 1 & 2)"]}</p>
+            <p><strong>Emissions (Scope 3):</strong> ${details["Emissions: Tonnes of CO2e (Scope 3)"]}</p>
+            <p><strong>Market Cap Category:</strong> ${details["Market Cap Category"]}</p>
+            <button onclick="renderChart('${details.Company}')">Show Graph</button>
+        `;
+    };
+
+    // Function to render a chart
+    window.renderChart = function(companyName) {
+        const details = parsedData.data.find(row => row.Company.toLowerCase() === companyName.toLowerCase());
+
+        // Show the chart container
+        document.getElementById('chartContainer').style.display = 'block';
+        
+        // Get the chart context and render the graph
+        const ctx = document.getElementById('esgChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['ESG Score', 'Emissions (Scope 1 & 2)', 'Emissions (Scope 3)'],
+                datasets: [{
+                    label: 'Company ESG Data',
+                    data: [
+                        parseFloat(details["ESG Score"]),
+                        parseFloat(details["Emissions: Tonnes of CO2e (Scope 1 & 2)"]),
+                        parseFloat(details["Emissions: Tonnes of CO2e (Scope 3)"])
+                    ],
+                    backgroundColor: ['#4caf50', '#ff9800', '#f44336'],
+                    borderColor: ['#388e3c', '#f57c00', '#d32f2f'],
+                    borderWidth: 1
+                }]
             },
-            error: (error) => {
-                console.error('Error parsing CSV data:', error);
-                document.getElementById('esgResult').innerHTML = 'Failed to load ESG data.';
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
             }
         });
-    } catch (error) {
-        console.error('Error fetching ESG data:', error);
-        document.getElementById('esgResult').innerHTML = 'Failed to fetch ESG data.';
-    }
-}
-
-// Function to display more details on button click
-function showMoreDetails() {
-    document.getElementById('moreDetails').style.display = 'block';
-}
-
-// Function to plot the ESG data as a chart
-function plotESGChart(companyData) {
-    const esgScore = parseFloat(companyData["ESG Score"]) || 0;
-    const temperatureScore = parseFloat(companyData["Temperature Score (2050)"]) || 0;
-    const emissionsScope1And2 = parseFloat(companyData["Emissions: Tonnes of CO2e (Scope 1 & 2)"]) || 0;
-    const emissionsScope3 = parseFloat(companyData["Emissions: Tonnes of CO2e (Scope 3)"]) || 0;
-
-    // Destroy the existing chart instance if it exists
-    if (chart) chart.destroy();
-
-    // Create the chart
-    const ctx = document.getElementById('esgChart').getContext('2d');
-    chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['ESG Score', 'Temperature Score', 'Emissions Scope 1 & 2', 'Emissions Scope 3'],
-            datasets: [{
-                label: companyData["Company"],
-                data: [esgScore, temperatureScore, emissionsScope1And2, emissionsScope3],
-                backgroundColor: [
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+    };
 }
