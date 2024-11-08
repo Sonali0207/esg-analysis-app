@@ -9,6 +9,9 @@
     <!-- Include PapaParse for parsing CSV data -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     
+    <!-- Include Chart.js for graphing data -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <!-- Link to your custom JavaScript file where fetchESGData function is defined -->
     <script src="script.js" defer></script>
 </head>
@@ -40,6 +43,7 @@
             <input type="text" id="companyName" placeholder="Enter Company Name">
             <button onclick="fetchESGData()">Get ESG Rating</button>
             <div id="esgResult"></div>
+            <canvas id="esgChart" style="max-width: 600px; margin-top: 20px;"></canvas>
         </div>
 
         <!-- Tidio Chat Script -->
