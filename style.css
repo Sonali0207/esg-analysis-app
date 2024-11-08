@@ -1,15 +1,18 @@
+/* General Body Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background-color: #fafafa; /* Light background for better readability */
 }
 
 header {
-    background-color: #FFA500; /* Orange color for header */
+    background-color: #ff1493; /* Neon pink */
     color: white;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Neon effect */
 }
 
 nav ul {
@@ -19,189 +22,158 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff69b4; /* Hover effect for links */
 }
 
 .hero-section {
-    background-image: url('https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Nature image from Pexels */
+    background-image: url('https://www.pexels.com/photo/empty-brown-canvas-235985/');
     background-size: cover;
     background-position: center;
-    height: 300px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
 .hero-section h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     font-weight: bold;
+    color: #ff1493;
 }
 
+/* Container for Info Section */
 #info {
     padding: 20px;
     background-color: #f9f9f9; /* Very light pastel color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #info h2 {
     color: #333;
+    text-transform: uppercase;
 }
 
 #info p {
     color: #555;
 }
 
+/* ESG Calculation Section */
 #esg-calculation {
     padding: 20px;
-    background-color: #f9f9f9; /* Very light pastel color */
+    background-color: #ff6347; /* Neon Orange color */
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     margin: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 #esg-calculation h2 {
-    color: #333;
-}
-
-#esg-calculation form {
-    margin-bottom: 20px;
+    color: white;
+    font-size: 1.5em;
 }
 
 #esg-calculation input[type="text"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
 
 #esg-calculation button {
-    background-color: #FFA500; /* Orange color for button */
+    background-color: #ff1493; /* Neon pink */
     color: white;
-    padding: 10px 15px;
+    padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 1.1em;
 }
 
 #esg-calculation button:hover {
-    background-color: #FF8C00; /* Slightly darker orange on hover */
+    background-color: #ff69b4; /* Slightly lighter pink on hover */
 }
 
-#esg-result, #esg-insights {
+/* Section for ESG Results and Graph */
+#esg-result {
     margin-top: 20px;
     font-weight: bold;
-}
-
-#graph-container {
-    margin-top: 30px;
-    text-align: center;
-    display: none; /* Initially hidden */
-}
-
-#chartContainer {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#esgResult {
     padding: 20px;
     background-color: #f4f4f4;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-button {
-    background-color: #FFA500; /* Orange color for button */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
+#esg-result h3 {
+    margin: 0;
 }
 
-button:hover {
-    background-color: #FF8C00; /* Slightly darker orange on hover */
+#esg-result p {
+    margin: 5px 0;
 }
 
+#chartContainer {
+    display: block;
+    margin-top: 20px;
+    width: 90%;
+    max-width: 600px; /* Making the graph smaller */
+    height: 300px;
+    margin: 0 auto;
+    background-color: #fff; /* Slight background for better visibility */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styling */
 footer {
-    background-color: #FFA500; /* Orange color for footer */
+    background-color: #ff1493; /* Neon Pink footer */
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     position: relative;
     bottom: 0;
     width: 100%;
 }
 
-/* Flexbox for layout adjustment */
+/* Flexbox Layout for ESG Results and Graph */
 .esg-section {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 20px;
 }
 
 .esg-section button {
-    margin-top: 10px;
-}
-
-#esgResult {
-    display: block;
-    padding: 20px;
     margin-top: 20px;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#esgResult h3 {
-    margin: 0;
-}
-
-#esgResult p {
-    margin: 5px 0;
-}
-
-#chartContainer {
-    display: none;
-    margin-top: 30px;
-    width: 80%;
-    max-width: 800px;
-    height: 400px;
-}
-
-#esgResult button {
-    background-color: #4CAF50; /* Green for the 'More Details' button */
-    margin-top: 10px;
-}
-
-#esgResult button:hover {
-    background-color: #45a049; /* Darker green on hover */
-}
-
+/* Media Query for Larger Screens */
 @media screen and (min-width: 768px) {
     .esg-section {
         flex-direction: row;
         justify-content: space-around;
     }
 
-    #esgResult {
-        max-width: 400px;
+    #esg-result {
+        max-width: 600px;
     }
 
     #chartContainer {
         width: 50%;
     }
 }
-
