@@ -1,18 +1,18 @@
 /* General Body Styling */
 body {
-    font-family: 'Orbitron', sans-serif; /* Modern font for neon effect */
+    font-family: 'Arial', sans-serif; /* Standard font */
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #0c0c0c; /* Dark background for neon lights to pop */
+    background-color: #1a1a1a; /* Dark background */
 }
 
 header {
-    background-color: #00ffcc; /* Neon green color */
+    background-color: #6A0DAD; /* Royal dark purple */
     color: #ffffff;
     padding: 15px;
     text-align: center;
-    text-shadow: 0 0 15px rgba(0, 255, 204, 1); /* Glow effect */
+    text-shadow: 0 0 15px rgba(106, 13, 173, 1); /* Glow effect */
 }
 
 nav ul {
@@ -34,8 +34,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff00ff; /* Neon purple on hover */
-    text-shadow: 0 0 10px #ff00ff; /* Glowing effect */
+    color: #32CD32; /* Royal green on hover */
+    text-shadow: 0 0 10px #32CD32; /* Glowing effect */
 }
 
 .hero-section {
@@ -53,20 +53,20 @@ nav ul li a:hover {
 .hero-section h1 {
     font-size: 4em;
     font-weight: bold;
-    color: #00ffcc;
-    text-shadow: 0 0 15px rgba(0, 255, 204, 1); /* Glowing effect */
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(106, 13, 173, 1); /* Glowing effect */
 }
 
 /* Container for Info Section */
 #info {
     padding: 20px;
-    background-color: #1f1f1f; /* Dark background to contrast with neon */
-    box-shadow: 0 4px 8px rgba(0, 255, 204, 0.2);
+    background-color: #333333; /* Slightly lighter dark background */
+    box-shadow: 0 4px 8px rgba(106, 13, 173, 0.2);
     color: #ffffff;
 }
 
 #info h2 {
-    color: #00ffcc;
+    color: #6A0DAD; /* Royal dark purple */
     text-transform: uppercase;
     font-size: 1.5em;
 }
@@ -79,11 +79,11 @@ nav ul li a:hover {
 /* ESG Calculation Section */
 #esg-calculation {
     padding: 20px;
-    background-color: #ff00ff; /* Neon purple */
+    background-color: #32CD32; /* Royal green */
     border: 1px solid #ddd;
     border-radius: 8px;
     margin: 20px;
-    box-shadow: 0 6px 12px rgba(255, 0, 255, 0.2);
+    box-shadow: 0 6px 12px rgba(50, 205, 50, 0.2);
 }
 
 #esg-calculation h2 {
@@ -102,7 +102,7 @@ nav ul li a:hover {
 }
 
 #esg-calculation button {
-    background-color: #00ffcc; /* Neon green */
+    background-color: #6A0DAD; /* Royal dark purple */
     color: white;
     padding: 12px 20px;
     border: none;
@@ -113,7 +113,7 @@ nav ul li a:hover {
 }
 
 #esg-calculation button:hover {
-    background-color: #00b3b3; /* Darker neon green */
+    background-color: #4B0082; /* Indigo color on hover */
 }
 
 /* ESG Results Section */
@@ -121,13 +121,13 @@ nav ul li a:hover {
     margin-top: 20px;
     font-weight: bold;
     padding: 20px;
-    background-color: #2a2a2a; /* Dark background to highlight results */
+    background-color: #333333; /* Dark background to contrast results */
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 255, 204, 0.1);
+    box-shadow: 0 4px 8px rgba(106, 13, 173, 0.1);
 }
 
 #esg-result h3 {
-    color: #00ffcc;
+    color: #32CD32; /* Royal green for headings */
 }
 
 #esg-result p {
@@ -143,21 +143,21 @@ nav ul li a:hover {
     height: 300px;
     margin: 0 auto;
     background-color: #1f1f1f;
-    border: 2px solid #00ffcc; /* Neon border around graph */
+    border: 2px solid #32CD32; /* Royal green border */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 255, 204, 0.2);
+    box-shadow: 0 4px 6px rgba(50, 205, 50, 0.2);
 }
 
 /* Footer Styling */
 footer {
-    background-color: #00ffcc; /* Neon Green Footer */
+    background-color: #6A0DAD; /* Royal dark purple Footer */
     color: #ffffff;
     text-align: center;
     padding: 15px;
     position: relative;
     bottom: 0;
     width: 100%;
-    text-shadow: 0 0 10px rgba(0, 255, 204, 1); /* Glowing text */
+    text-shadow: 0 0 10px rgba(106, 13, 173, 1); /* Glowing text */
 }
 
 /* Responsive Design for Larger Screens */
