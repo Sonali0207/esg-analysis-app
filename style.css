@@ -3,8 +3,6 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-    margin: 0;
-    padding: 0;
 }
 
 header {
@@ -29,10 +27,11 @@ header nav ul li a {
 }
 
 #hero {
-    background: url('https://images.pexels.com/photos/2078266/pexels-photo-2078266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+    background: url('https://images.pexels.com/photos/6485526/pexels-photo-6485526.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center;
+    background-size: cover;
     color: white;
     text-align: center;
-    padding: 50px 0;
+    padding: 100px 0;  /* Increase the padding to give space for the background */
 }
 
 #hero h1 {
@@ -83,7 +82,10 @@ button:hover {
 
 #chartContainer {
     margin-top: 20px;
-    text-align: center;
+    width: 80%;  /* Reduce the width of the chart */
+    max-width: 600px;  /* Limit the width for a more compact look */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer {
