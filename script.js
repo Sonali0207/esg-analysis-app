@@ -1,5 +1,5 @@
 // Link to the raw CSV file on GitHub
-const csvUrl = 'https://raw.githubusercontent.com/Sonali0207/esg-analysis-app/main/United spreadsheet-Sheet1.csv'; // Replace with your GitHub CSV link
+const csvUrl = 'https://raw.githubusercontent.com/Sonali0207/esg-analysis-app/main/Untitled spreadsheet - Sheet1.csv'; // Replace with your GitHub CSV link
 
 // Function to fetch and display ESG data
 async function fetchESGData() {
