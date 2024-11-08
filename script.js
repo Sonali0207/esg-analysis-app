@@ -1,4 +1,4 @@
-const csvUrl = 'https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/YOUR_FILE.csv'; // Replace with your actual CSV URL
+const csvUrl = 'https://raw.githubusercontent.com/Sonali0207/esg-analysis-app/main/YOUR_FILE.csv'; // Replace with your actual CSV URL
 
 async function fetchESGData() {
     const inputCompanyName = document.getElementById('companyName').value.trim().toLowerCase();
