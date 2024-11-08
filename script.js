@@ -1,36 +1,40 @@
-const API_KEY = '33KEH1W2QQ2SV961'; // Replace with your actual API key from Alpha Vantage
+// Link to the raw CSV file on GitHub
+const csvUrl = 'https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/YOUR_FILE.csv'; // Replace with your GitHub CSV link
 
+// Function to fetch and display ESG data
 async function fetchESGData() {
-    const companyName = document.getElementById('companyName').value;
-    const url = `https://www.alphavantage.co/query?function=ESG&symbol=${companyName}&apikey=${API_KEY}`;
+    const companyName = document.getElementById('companyName').value.trim().toLowerCase();
 
     try {
-        const response = await fetch(url);
-        const data = await response.json();
+        const response = await fetch(csvUrl);
+        const csvData = await response.text();
 
-        if (data.Note) {
-            document.getElementById('esgResult').innerHTML = 'API limit reached. Please try again later.';
-            return;
-        }
+        Papa.parse(csvData, {
+            header: true,
+            complete: (results) => {
+                const data = results.data;
 
-        if (data["Error Message"]) {
-            document.getElementById('esgResult').innerHTML = 'Company not found. Please check the ticker symbol.';
-            return;
-        }
+                // Find the company's ESG data by name (assuming your CSV has "Company Name" column)
+                const companyData = data.find(row => row["Company Name"] && row["Company Name"].toLowerCase() === companyName);
 
-        if (!data.symbol) {
-            document.getElementById('esgResult').innerHTML = 'No ESG data available for the specified company.';
-            return;
-        }
-
-        const esgRating = `
-            <h4>ESG Rating for ${companyName}</h4>
-            <p>Environmental Score: ${data.environmentalScore || 'N/A'}</p>
-            <p>Social Score: ${data.socialScore || 'N/A'}</p>
-            <p>Governance Score: ${data.governanceScore || 'N/A'}</p>
-        `;
-        document.getElementById('esgResult').innerHTML = esgRating;
-
+                // Check if the company was found in the data
+                if (companyData) {
+                    const esgRating = `
+                        <h4>ESG Rating for ${companyData["Company Name"]}</h4>
+                        <p>Environmental Score: ${companyData["Environmental Score"] || 'N/A'}</p>
+                        <p>Social Score: ${companyData["Social Score"] || 'N/A'}</p>
+                        <p>Governance Score: ${companyData["Governance Score"] || 'N/A'}</p>
+                    `;
+                    document.getElementById('esgResult').innerHTML = esgRating;
+                } else {
+                    document.getElementById('esgResult').innerHTML = 'Company not found in the data.';
+                }
+            },
+            error: (error) => {
+                console.error('Error parsing CSV data:', error);
+                document.getElementById('esgResult').innerHTML = 'Failed to load ESG data.';
+            }
+        });
     } catch (error) {
         console.error('Error fetching ESG data:', error);
         document.getElementById('esgResult').innerHTML = 'Failed to fetch ESG data.';
