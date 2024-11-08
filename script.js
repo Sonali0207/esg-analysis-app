@@ -25,7 +25,7 @@ async function fetchESGData() {
     // Display ESG Score
     document.getElementById('esgResult').innerHTML = `
         <h3>ESG Score for ${companyData.Company}</h3>
-        <p>ESG Score: ${companyData["ESG Score"]}</p>
+        <p><strong>ESG Score:</strong> ${companyData["ESG Score"]}</p>
         <button onclick="showDetails('${companyData.Company}')">More Details</button>
     `;
 
@@ -48,7 +48,7 @@ async function fetchESGData() {
 
         // Show the chart container
         document.getElementById('chartContainer').style.display = 'block';
-        
+
         // Get the chart context and render the graph
         const ctx = document.getElementById('esgChart').getContext('2d');
         new Chart(ctx, {
@@ -56,7 +56,7 @@ async function fetchESGData() {
             data: {
                 labels: ['ESG Score', 'Emissions (Scope 1 & 2)', 'Emissions (Scope 3)'],
                 datasets: [{
-                    label: 'Company ESG Data',
+                    label: `${details.Company} ESG Data`,
                     data: [
                         parseFloat(details["ESG Score"]),
                         parseFloat(details["Emissions: Tonnes of CO2e (Scope 1 & 2)"]),
@@ -77,3 +77,4 @@ async function fetchESGData() {
         });
     };
 }
+
