@@ -1,9 +1,7 @@
-// Link to the raw CSV file on GitHub
-const csvUrl = 'https://raw.githubusercontent.com/Sonali0207/esg-analysis-app/main/Untitled spreadsheet - Sheet1.csv'; // Replace with your GitHub CSV link
+const csvUrl = 'https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/YOUR_FILE.csv'; // Replace with your CSV file link
 
-// Function to fetch and display ESG data
 async function fetchESGData() {
-    const companyName = document.getElementById('companyName').value.trim().toLowerCase();
+    const inputCompanyName = document.getElementById('companyName').value.trim().toLowerCase(); // Normalize input
 
     try {
         const response = await fetch(csvUrl);
@@ -11,13 +9,16 @@ async function fetchESGData() {
 
         Papa.parse(csvData, {
             header: true,
+            skipEmptyLines: true, // Skip any empty rows
             complete: (results) => {
                 const data = results.data;
 
-                // Find the company's ESG data by name (assuming your CSV has "Company Name" column)
-                const companyData = data.find(row => row["Company Name"] && row["Company Name"].toLowerCase() === companyName);
+                // Normalize and match company names from CSV
+                const companyData = data.find(row => {
+                    return row["Company Name"] && row["Company Name"].trim().toLowerCase() === inputCompanyName;
+                });
 
-                // Check if the company was found in the data
+                // Display ESG data or error message
                 if (companyData) {
                     const esgRating = `
                         <h4>ESG Rating for ${companyData["Company Name"]}</h4>
@@ -40,3 +41,4 @@ async function fetchESGData() {
         document.getElementById('esgResult').innerHTML = 'Failed to fetch ESG data.';
     }
 }
+
