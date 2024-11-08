@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: #B2BEB5;
+    background: #ECFADC;
     color: #fff;
     padding: 10px 0;
 }
@@ -90,7 +90,7 @@ button:hover {
 
 footer {
     text-align: center;
-    background: #B2BEB5;
+    background: #ECFADC;
     color: #fff;
     padding: 10px 0;
 }
