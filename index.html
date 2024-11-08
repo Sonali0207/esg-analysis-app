@@ -47,9 +47,19 @@
             <div id="esgResult"></div>
         </div>
 
-        <!-- Chart container (Initially hidden) -->
-        <div id="chartContainer" style="display: none;">
-            <canvas id="esgChart" width="400" height="200"></canvas>
+        <!-- ESG and Graph Container -->
+        <div class="esg-container">
+            <!-- ESG Result Section -->
+            <div id="esgResultSection">
+                <h3>ESG Result</h3>
+                <div id="esgResult"></div>
+                <button id="showDetailsButton" onclick="toggleGraph()">Show Details</button>
+            </div>
+
+            <!-- Chart container (Initially hidden) -->
+            <div id="chartContainer" style="display: none; width: 50%; margin-left: 20px;">
+                <canvas id="esgChart" width="400" height="200"></canvas>
+            </div>
         </div>
 
         <!-- Tidio Chat Script -->
@@ -60,5 +70,59 @@
         <p>Contact us at: <a href="mailto:info@esgdashboard.com">info@esgdashboard.com</a></p>
         <p>&copy; 2024 ESG Matrices Dashboard</p>
     </footer>
+
+    <script>
+        // Toggle the visibility of the graph when the button is clicked
+        function toggleGraph() {
+            const chartContainer = document.getElementById('chartContainer');
+            const button = document.getElementById('showDetailsButton');
+
+            if (chartContainer.style.display === 'none') {
+                chartContainer.style.display = 'block';
+                button.innerText = 'Hide Details';
+            } else {
+                chartContainer.style.display = 'none';
+                button.innerText = 'Show Details';
+            }
+        }
+
+        // Example fetchESGData function (Modify based on your data source and logic)
+        function fetchESGData() {
+            // Placeholder function to simulate fetching data
+            const companyName = document.getElementById('companyName').value;
+            const esgResult = document.getElementById('esgResult');
+
+            // Simulating a fetched ESG rating
+            esgResult.innerHTML = `
+                <p><strong>Company:</strong> ${companyName}</p>
+                <p><strong>Environmental Score:</strong> 75%</p>
+                <p><strong>Social Score:</strong> 80%</p>
+                <p><strong>Governance Score:</strong> 85%</p>
+            `;
+
+            // Sample data for the graph
+            const ctx = document.getElementById('esgChart').getContext('2d');
+            const esgChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Environmental', 'Social', 'Governance'],
+                    datasets: [{
+                        label: 'ESG Scores',
+                        data: [75, 80, 85],
+                        backgroundColor: ['#4CAF50', '#FF6347', '#FFD700'],
+                        borderColor: ['#388E3C', '#F44336', '#FF9800'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>
