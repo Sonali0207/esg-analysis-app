@@ -3,66 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESG Matrices Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- Include PapaParse for parsing CSV data -->
+    <title>ESG Report Generator</title>
+    <!-- Include PapaParse Library for CSV Parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    
-    <!-- Link to your custom JavaScript file where fetchESGData function is defined -->
-    <script src="script.js" defer></script>
-    
-    <!-- Include Chart.js for the graph -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <!-- Include jsPDF Library for PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
+        #hero {
+            background: url('https://images.pexels.com/photos/6485526/pexels-photo-6485526.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        #hero h1 {
+            font-size: 3rem;
+        }
+
+        #info {
+            padding: 20px;
+        }
+
+        .overview-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .overview-section p {
+            font-size: 1.1rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .esg-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #companyName {
+            padding: 10px;
+            width: 50%;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #chartContainer {
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            text-align: center;
+            background: #FFFFF0;
+            color: #000000;
+            padding: 10px 0;
+        }
+
+        footer a {
+            color: #fff;
+        }
+
+        /* Add additional styling */
+        #downloadSection {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #downloadPDF {
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #downloadPDF:hover {
+            background-color: #1976D2;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#reports">Reports</a></li>
-            </ul>
-        </nav>
+        <h1>ESG Data and Report Generator</h1>
     </header>
 
-    <main>
-        <section id="hero" class="hero-section">
-            <h1>ESG MATRICES DASHBOARD</h1>
-        </section>
+    <div id="hero">
+        <h1>Environmental, Social & Governance (ESG) Report</h1>
+    </div>
 
-        <section id="info">
-            <h2>ESG Analysis Overview</h2>
-            <div class="overview-section">
-                <p><strong>Environmental Impact:</strong> The Environmental Score evaluates a company’s commitment to preserving natural resources, managing waste, reducing emissions, and utilizing renewable energy. It reflects a company’s responsibility towards mitigating climate change and environmental degradation.</p>
-                <p><strong>Social Responsibility:</strong> The Social Score highlights a company’s impact on its employees, customers, and communities. It measures factors like employee satisfaction, community engagement, health and safety, and workforce diversity.</p>
-                <p><strong>Governance Policies:</strong> The Governance Score measures a company’s adherence to ethical business practices, transparency, and strong leadership. It focuses on board diversity, executive compensation, anti-corruption policies, and shareholder rights.</p>
+    <div id="info">
+        <div class="overview-section">
+            <input type="text" id="companyName" placeholder="Enter company name..." oninput="showSuggestions()" />
+            <div id="suggestions"></div>
+
+            <div id="esgResult">
+                <!-- ESG Result will be displayed here -->
             </div>
-        </section>
-
-        <div class="esg-section">
-                <h2>Get ESG Rating</h2>
-                <input type="text" id="companyName" placeholder="Enter Company Name" oninput="showSuggestions()" autocomplete="off">
-                <div id="suggestions" class="suggestions-box"></div> <!-- Container for autocomplete suggestions -->
-                <button onclick="fetchESGData()">Get ESG Rating</button>
-                <div id="esgResult"></div>
         </div>
 
-
-        <!-- Chart container (Initially hidden) -->
-        <div id="chartContainer" style="display: none;">
-            <canvas id="esgChart" width="300" height="150"></canvas>
+        <div class="esg-section" id="chartContainer">
+            <canvas id="esgChart"></canvas>
         </div>
 
-        <!-- Tidio Chat Script -->
-        <script src="//code.tidio.co/khxk1hmdarkhdxb5nvqmwepeou0wwibf.js" async></script>
-    </main>
+        <!-- Button to download the report as PDF -->
+        <div id="downloadSection">
+            <button id="downloadPDF" onclick="downloadPDF()">Download Report as PDF</button>
+        </div>
+    </div>
 
     <footer>
-        <p>Contact us at: <a href="mailto:info@esgdashboard.com">info@esgdashboard.com</a></p>
-        <p>&copy; 2024 ESG Matrices Dashboard</p>
+        <p>&copy; 2024 ESG Reporting</p>
     </footer>
-</body>
-</html>
+
+    <script>
+        // CSV URL - Replace this with the actual path to your CSV file
+        const csvUrl = 'https://raw.githubusercontent.com/yourcsvpath.csv';
+
+        // Function to fetch and parse CSV data
+        async function fetchESGData() {
+            const companyName = document.getElementById('companyName').value;
+
+            // Fetch the CSV file
+            const response = await fetch(csvUrl);
+            const csvText = await response.text();
+
+            // Parse CSV using PapaParse
+            const parsedData = Papa.parse(csvText, {
+                header: true,
+                skipEmptyLines: true
+            });
+
+            // Find the company data from the parsed CSV
+            const companyData = parsedData.data.find(row => row.Company.toLowerCase() === companyName.toLowerCase());
+
+            if (!companyData) {
+                document.getElementById('esgResult').innerHTML = 'Company not found. Please check the name and try again.';
+                return;
+            }
+
+            // Display ESG Score
+            document.getElementById('esgResult').innerHTML = `
+                <h3>ESG Score for ${companyData.Company}</h3>
+                <p>ESG Score: ${companyData["ESG Score"]}</p>
+                <button onclick="showDetails('${companyData.Company}')">More Details</button>
+            `;
+        }
+
+        // Function to show more details when "More Details" is clicked
+        window.showDetails = function(companyName) {
+            const response = fetch(csvUrl);
+            const csvText = await response.text();
+            const parsedData = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+
+            const details = parsedData.data.find(row => row.Company.toLowerCase() === companyName.toLowerCase());
+            document.getElementById('esgResult').innerHTML = `
+                <h3>Details for ${details.Company}</h3>
+                <p><strong>Temperature Score (2050):</strong> ${details["Temperature Score (2050)"]}</p>
+                <p><strong>Emissions (Scope 1 & 2):</strong> ${details["Emissions: Tonnes of CO2e (Scope 1 & 2)"]}</p>
+                <p><strong>Emissions (Scope 3):</strong> ${details["Emissions: Tonnes of CO2e (Scope 3)"]}</p>
+                <p><strong>Market Cap Category:</strong> ${details["Market Cap Category"]}</p>
+                <button onclick="renderChart('${details.Company}')">Show Graph</button>
+            `;
+        };
+
+        // Function to render a chart
+        window.renderChart = function(companyName) {
+            const response = fetch(csvUrl);
+            const csvText = await response.text();
+            const parsedData = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+
+            const details = parsedData.data.find(row => row.Company.toLowerCase() === companyName.toLowerCase());
+
+            // Show the chart container
+            document.getElementById('chartContainer').style.display = 'block';
+            
+            // Get the chart context and render the graph
+            const ctx = document.getElementById('esgChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['ESG Score', 'Emissions (Scope 1 & 2)', 'Emissions (Scope 3)'],
+                    datasets: [{
+                        label: 'Company ESG Data',
+                        data: [
+                            parseFloat(details["ESG Score"]),
+                            parseFloat(details["Emissions: Tonnes of CO2e (Scope 1 & 2)"]),
+                            parseFloat(details["Emissions: Tonnes of CO2e (Scope 3)"])
+                        ],
+                        backgroundColor: ['#4caf50', '#ff9800', '#f44336'],
+                        borderColor: ['#388e3c', '#f57c00', '#d32f2f'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        };
+
+        // Function to download the report as PDF
+        async function downloadPDF() {
+            const companyName = document.getElementById('companyName').value;
+
+            if (!companyName) {
+                alert("Please enter a company name to download the report.");
+                return;
+            }
+
+            // Fetch data and find the selected company's data
+            const response = await fetch(csvUrl);
+            const csvText = await response.text();
+            const parsedData = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+            const companyData = parsedData.data.find(row => row.Company.toLowerCase() === companyName.toLowerCase());
+
+            if (!companyData) {
+                alert("Company data not found. Please check the company name.");
+                return;
+            }
+
+            // Generate the PDF
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF();
+
+            pdf.setFontSize(16);
+            pdf.text(`ESG Report for ${companyData.Company}`, 10, 10);
+
+            pdf.setFontSize(12);
+            pdf.text(`Company: ${companyData.Company}`, 10, 30);
+            pdf.text(`ESG Score: ${company
