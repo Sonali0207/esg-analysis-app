@@ -100,14 +100,21 @@ input.addEventListener('input', function() {
     if (inputVal) {
         // Filter names to only include those that start with the input value
         const filteredNames = companyNames.filter(name => name.toLowerCase().startsWith(inputVal));
-        filteredNames.forEach(name => {
-            const suggestionItem = document.createElement('li');
-            suggestionItem.textContent = name;
-            suggestionItem.addEventListener('click', () => {
-                input.value = name;
-                suggestionsBox.innerHTML = ''; // Clear suggestions
+        if (filteredNames.length > 0) {
+            filteredNames.forEach(name => {
+                const suggestionItem = document.createElement('li');
+                suggestionItem.textContent = name;
+                suggestionItem.addEventListener('click', () => {
+                    input.value = name;
+                    suggestionsBox.innerHTML = ''; // Clear suggestions after selecting
+                    fetchESGData(); // Automatically fetch data when a suggestion is selected
+                });
+                suggestionsBox.appendChild(suggestionItem);
             });
-            suggestionsBox.appendChild(suggestionItem);
-        });
+        } else {
+            const noResultsItem = document.createElement('li');
+            noResultsItem.textContent = 'No matching companies found';
+            suggestionsBox.appendChild(noResultsItem);
+        }
     }
 });
