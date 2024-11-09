@@ -22,16 +22,16 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #fff;
+    color: #000; /* Changed to black */
     text-decoration: none;
 }
 
 #hero {
-    background: url('https://images.pexels.com/photos/6485526/pexels-photo-6485526.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center;
+    background: url('https://images.pexels.com/photos/7233107/pexels-photo-7233107.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load') no-repeat center center;
     background-size: cover;
     color: white;
     text-align: center;
-    padding: 100px 0;  /* Increase the padding to give space for the background */
+    padding: 120px 0;  /* Increased padding for more visibility */
 }
 
 #hero h1 {
@@ -42,6 +42,7 @@ header nav ul li a {
     padding: 20px;
 }
 
+/* Overview Section Styling */
 .overview-section {
     display: flex;
     flex-direction: column;
@@ -56,11 +57,13 @@ header nav ul li a {
     line-height: 1.8;
 }
 
+/* ESG Section Styling */
 .esg-section {
     margin-top: 20px;
     text-align: center;
 }
 
+/* Styling for Input with Suggestions */
 #companyName {
     padding: 10px;
     width: 50%;
@@ -68,6 +71,33 @@ header nav ul li a {
     border: 1px solid #ccc;
 }
 
+/* Dropdown for Suggestions */
+.suggestions {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.suggestions-list {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.suggestions-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Button Styling */
 button {
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -80,21 +110,23 @@ button:hover {
     background-color: #45a049;
 }
 
+/* Chart Container Styling */
 #chartContainer {
     margin-top: 20px;
-    width: 80%;  /* Reduce the width of the chart */
-    max-width: 600px;  /* Limit the width for a more compact look */
+    width: 80%;  /* Reduced width of the chart for a compact view */
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Footer Styling */
 footer {
     text-align: center;
     background: #FFFFF0;
-    color: #000000;
+    color: #000000; /* Changed to black */
     padding: 10px 0;
 }
 
 footer a {
-    color: #fff;
+    color: #000; /* Changed to black */
 }
