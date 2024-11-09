@@ -87,7 +87,7 @@ function renderChart(companyData) {
     });
 }
 
-// Autocomplete suggestions for company names
+// Autocomplete suggestions for company names (based on first letter match)
 const input = document.getElementById('companyName');
 const suggestionsBox = document.createElement('ul');
 suggestionsBox.className = 'suggestions-list';
