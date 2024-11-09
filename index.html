@@ -43,11 +43,13 @@
         </section>
 
         <div class="esg-section">
-            <h2>Get ESG Rating</h2>
-            <input type="text" id="companyName" placeholder="Enter Company Name">
-            <button onclick="fetchESGData()">Get ESG Rating</button>
-            <div id="esgResult"></div>
+                <h2>Get ESG Rating</h2>
+                <input type="text" id="companyName" placeholder="Enter Company Name" oninput="showSuggestions()" autocomplete="off">
+                <div id="suggestions" class="suggestions-box"></div> <!-- Container for autocomplete suggestions -->
+                <button onclick="fetchESGData()">Get ESG Rating</button>
+                <div id="esgResult"></div>
         </div>
+
 
         <!-- Chart container (Initially hidden) -->
         <div id="chartContainer" style="display: none;">
