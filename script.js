@@ -1,5 +1,7 @@
 const csvUrl = 'https://raw.githubusercontent.com/Sonali0207/esg-analysis-app/main/Untitled spreadsheet - Sheet1.csv'; // Replace this with the actual URL of your CSV file
+
 let companyNames = []; // To store company names once loaded
+let chartInstance; // Variable to store the chart instance
 
 // Function to load company names from CSV on page load
 async function loadCompanyNames() {
@@ -50,7 +52,7 @@ async function fetchESGData() {
             <p><strong>Emissions (Scope 1 & 2):</strong> ${details["Emissions: Tonnes of CO2e (Scope 1 & 2)"]}</p>
             <p><strong>Emissions (Scope 3):</strong> ${details["Emissions: Tonnes of CO2e (Scope 3)"]}</p>
             <p><strong>Market Cap Category:</strong> ${details["Market Cap Category"]}</p>
-            <button onclick="renderChart('${details.Company}')">Show Graph</button>
+            <button id="showGraphBtn" onclick="renderChart('${details.Company}')">Show Graph</button>
         `;
     };
 
@@ -58,12 +60,20 @@ async function fetchESGData() {
     window.renderChart = function(companyName) {
         const details = parsedData.data.find(row => row.Company.toLowerCase() === companyName.toLowerCase());
 
+        // Hide the "Show Graph" button after it's clicked
+        document.getElementById('showGraphBtn').style.display = 'none';
+
+        // Clear any existing chart instance
+        if (chartInstance) {
+            chartInstance.destroy();
+        }
+
         // Show the chart container
         document.getElementById('chartContainer').style.display = 'block';
 
         // Get the chart context and render the graph
         const ctx = document.getElementById('esgChart').getContext('2d');
-        new Chart(ctx, {
+        chartInstance = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: ['ESG Score', 'Emissions (Scope 1 & 2)', 'Emissions (Scope 3)'],
