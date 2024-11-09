@@ -6,8 +6,8 @@ body {
 }
 
 header {
-    background: #ECFADC;
-    color: #fff;
+    background: #FFFFF0;
+    color: #000000;
     padding: 10px 0;
 }
 
@@ -90,8 +90,8 @@ button:hover {
 
 footer {
     text-align: center;
-    background: #ECFADC;
-    color: #fff;
+    background: #FFFFF0;
+    color: #000000;
     padding: 10px 0;
 }
 
