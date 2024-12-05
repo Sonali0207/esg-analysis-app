@@ -57,7 +57,7 @@
             <canvas id="esgChart" width="400" height="200"></canvas>
         </div>
 
-        <!-- Reports Section -->
+        <!-- Reports Section (Hidden by default) -->
         <section id="reports" style="display: none;">
             <h2>ESG Reports</h2>
             <div class="report-card">
@@ -98,18 +98,17 @@
 
     <script src="script.js"></script>
     <script>
-        // Function to show only the Home section and hide others
+        // Function to show Home section and hide other sections
         function showHome() {
-            // Hide all sections
+            document.getElementById('home').style.display = 'block';
             document.getElementById('about').style.display = 'none';
             document.getElementById('reports').style.display = 'none';
             document.getElementById('search').style.display = 'none';
-            document.getElementById('home').style.display = 'block'; // Show home section
         }
 
-        // Function to show a specific section
+        // Function to show a specific section based on sectionId
         function showSection(sectionId) {
-            // Hide all sections
+            // Hide all sections first
             document.getElementById('home').style.display = 'none';
             document.getElementById('about').style.display = 'none';
             document.getElementById('reports').style.display = 'none';
@@ -119,9 +118,9 @@
             document.getElementById(sectionId).style.display = 'block';
         }
 
-        // Initially show the Home page
+        // Initially, show the Home section on page load
         window.onload = function() {
-            showHome(); // Call showHome on page load to ensure home section is visible
+            showHome();
         };
     </script>
 </body>
