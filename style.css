@@ -119,6 +119,40 @@ button:hover {
     margin-right: auto;
 }
 
+/* Reports Section Styling */
+#reports {
+    padding: 20px;
+    background-color: #e9f7f1;  /* Soft background color */
+    margin-top: 30px;
+    text-align: center;
+}
+
+#reports h2 {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+#reports ul {
+    list-style: none;
+    padding: 0;
+}
+
+#reports ul li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+#reports ul li a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#reports ul li a:hover {
+    text-decoration: underline;
+}
+
 /* Footer Styling */
 footer {
     text-align: center;
@@ -130,3 +164,4 @@ footer {
 footer a {
     color: #000; /* Changed to black */
 }
+
