@@ -5,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESG Matrices Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     
     <!-- Include PapaParse for parsing CSV data -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     
-    <!-- Link to your custom JavaScript file where fetchESGData function is defined -->
-    <script src="script.js" defer></script>
-    
-    <!-- Include Chart.js for the graph -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-
+    <!-- Include Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -36,36 +32,34 @@
         <section id="info">
             <h2>ESG Analysis Overview</h2>
             <div class="overview-section">
-                <p><strong>Environmental Impact:</strong> The Environmental Score evaluates a company’s commitment to preserving natural resources, managing waste, reducing emissions, and utilizing renewable energy. It reflects a company’s responsibility towards mitigating climate change and environmental degradation.</p>
-                <p><strong>Social Responsibility:</strong> The Social Score highlights a company’s impact on its employees, customers, and communities. It measures factors like employee satisfaction, community engagement, health and safety, and workforce diversity.</p>
-                <p><strong>Governance Policies:</strong> The Governance Score measures a company’s adherence to ethical business practices, transparency, and strong leadership. It focuses on board diversity, executive compensation, anti-corruption policies, and shareholder rights.</p>
+                <p><strong>Environmental Impact:</strong> The Environmental Score evaluates a company’s commitment to preserving natural resources, managing waste, reducing emissions, and utilizing renewable energy.</p>
+                <p><strong>Social Responsibility:</strong> The Social Score highlights a company’s impact on its employees, customers, and communities, measuring factors like employee satisfaction, health and safety, and workforce diversity.</p>
+                <p><strong>Governance Policies:</strong> The Governance Score focuses on ethical business practices, transparency, and strong leadership.</p>
             </div>
         </section>
 
-      <div class="suggestions"></div>
+        <section id="search">
+            <h2>Search ESG Data</h2>
+            <input type="text" id="companyName" placeholder="Type company name" autocomplete="off">
+            <ul id="suggestions" class="suggestions-list"></ul>
+            <button onclick="fetchESGData()">Search</button>
+            <div id="esgResult"></div>
+        </section>
 
-          <input type="text" id="companyName" placeholder="Type company name">
-
-          <div id="esgResult"></div>
-
-          <div id="chartContainer" style="display: none;">
-             <canvas id="esgChart"></canvas>
-     </div>
-
-
-
-        <!-- Chart container (Initially hidden) -->
+        <!-- Chart container -->
         <div id="chartContainer" style="display: none;">
             <canvas id="esgChart" width="400" height="200"></canvas>
         </div>
-
-        <!-- Tidio Chat Script -->
-        <script src="//code.tidio.co/khxk1hmdarkhdxb5nvqmwepeou0wwibf.js" async></script>
     </main>
 
+    <!-- Tidio Chat Script -->
+    <script src="//code.tidio.co/khxk1hmdarkhdxb5nvqmwepeou0wwibf.js" async></script>
+    
     <footer>
         <p>Contact us at: <a href="mailto:info@esgdashboard.com">info@esgdashboard.com</a></p>
         <p>&copy; 2024 ESG Matrices Dashboard</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
