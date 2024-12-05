@@ -17,22 +17,21 @@
     <header>
         <nav>
             <ul>
-                <li><a href="javascript:void(0);" onclick="showHome()">Home</a></li>
-                <li><a href="javascript:void(0);" onclick="showSection('about')">About</a></li>
-                <li><a href="javascript:void(0);" onclick="showSection('reports')">Reports</a></li>
-                <li><a href="javascript:void(0);" onclick="showSection('search')">Search</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reports">Reports</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section (Home) -->
-        <section id="home" class="hero-section">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
             <h1>ESG MATRICES DASHBOARD</h1>
         </section>
 
-        <!-- Overview Section (About) -->
-        <section id="about" style="display: none;">
+        <!-- Overview Section -->
+        <section id="info">
             <h2>ESG Analysis Overview</h2>
             <div class="overview-section">
                 <p><strong>Environmental Impact:</strong> The Environmental Score evaluates a company’s commitment to preserving natural resources, managing waste, reducing emissions, and utilizing renewable energy.</p>
@@ -42,7 +41,7 @@
         </section>
 
         <!-- Search Section -->
-        <section id="search" style="display: none;">
+        <section id="search">
             <h2>Search ESG Data</h2>
             <input type="text" id="companyName" placeholder="Type company name" autocomplete="off">
             <div class="suggestions">
@@ -52,13 +51,13 @@
             <div id="esgResult"></div>
         </section>
 
-        <!-- Chart Section (Hidden initially) -->
+        <!-- Chart Section -->
         <div id="chartContainer" style="display: none;">
             <canvas id="esgChart" width="400" height="200"></canvas>
         </div>
 
         <!-- Reports Section -->
-        <section id="reports" style="display: none;">
+        <section id="reports">
             <h2>ESG Reports</h2>
             <div class="report-card">
                 <h3>Sustainalytics ESG Ratings</h3>
@@ -97,24 +96,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        function showHome() {
-            document.getElementById('home').style.display = 'block';
-            document.getElementById('about').style.display = 'none';
-            document.getElementById('reports').style.display = 'none';
-            document.getElementById('search').style.display = 'none';
-        }
-
-        function showSection(sectionId) {
-            // Hide all sections first
-            document.getElementById('home').style.display = 'none';
-            document.getElementById('about').style.display = 'none';
-            document.getElementById('reports').style.display = 'none';
-            document.getElementById('search').style.display = 'none';
-
-            // Show the selected section
-            document.getElementById(sectionId).style.display = 'block';
-        }
-    </script>
 </body>
-</html>
+</html> 
