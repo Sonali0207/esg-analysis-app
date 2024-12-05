@@ -98,15 +98,18 @@
 
     <script src="script.js"></script>
     <script>
+        // Function to show only the Home section and hide others
         function showHome() {
-            document.getElementById('home').style.display = 'block';
+            // Hide all sections
             document.getElementById('about').style.display = 'none';
             document.getElementById('reports').style.display = 'none';
             document.getElementById('search').style.display = 'none';
+            document.getElementById('home').style.display = 'block'; // Show home section
         }
 
+        // Function to show a specific section
         function showSection(sectionId) {
-            // Hide all sections first
+            // Hide all sections
             document.getElementById('home').style.display = 'none';
             document.getElementById('about').style.display = 'none';
             document.getElementById('reports').style.display = 'none';
@@ -115,6 +118,11 @@
             // Show the selected section
             document.getElementById(sectionId).style.display = 'block';
         }
+
+        // Initially show the Home page
+        window.onload = function() {
+            showHome(); // Call showHome on page load to ensure home section is visible
+        };
     </script>
 </body>
 </html>
