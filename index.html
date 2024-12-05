@@ -25,10 +25,12 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="hero" class="hero-section">
             <h1>ESG MATRICES DASHBOARD</h1>
         </section>
 
+        <!-- Overview Section -->
         <section id="info">
             <h2>ESG Analysis Overview</h2>
             <div class="overview-section">
@@ -38,25 +40,56 @@
             </div>
         </section>
 
-       <section id="search">
-         <h2>Search ESG Data</h2>
-         <input type="text" id="companyName" placeholder="Type company name" autocomplete="off">
-         <div class="suggestions">
-         <ul id="suggestions" class="suggestions-list"></ul>
-         </div>
-         <button onclick="fetchESGData()">Search</button>
-         <div id="esgResult"></div>
-      </section>
+        <!-- Search Section -->
+        <section id="search">
+            <h2>Search ESG Data</h2>
+            <input type="text" id="companyName" placeholder="Type company name" autocomplete="off">
+            <div class="suggestions">
+                <ul id="suggestions" class="suggestions-list"></ul>
+            </div>
+            <button onclick="fetchESGData()">Search</button>
+            <div id="esgResult"></div>
+        </section>
 
-
-        <!-- Chart container -->
+        <!-- Chart Section -->
         <div id="chartContainer" style="display: none;">
             <canvas id="esgChart" width="400" height="200"></canvas>
         </div>
+
+        <!-- Reports Section -->
+        <section id="reports">
+            <h2>ESG Reports</h2>
+            <div class="report-card">
+                <h3>Sustainalytics ESG Ratings</h3>
+                <p>Provides detailed ESG ratings and reports for various companies.</p>
+                <a href="https://www.sustainalytics.com/esg-ratings" target="_blank">
+                    <button>View Report</button>
+                </a>
+            </div>
+            <div class="report-card">
+                <h3>MSCI ESG Ratings</h3>
+                <p>Offers ESG ratings and research on companies.</p>
+                <a href="https://www.msci.com/sustainable-investing/esg-ratings" target="_blank">
+                    <button>View Report</button>
+                </a>
+            </div>
+            <div class="report-card">
+                <h3>Morningstar Sustainability Ratings</h3>
+                <p>Morningstar provides sustainability ratings for funds and companies.</p>
+                <a href="https://www.morningstar.com/research" target="_blank">
+                    <button>View Report</button>
+                </a>
+            </div>
+            <div class="report-card">
+                <h3>Global Reporting Initiative (GRI)</h3>
+                <p>The GRI provides a framework for sustainability reporting and various company reports.</p>
+                <a href="https://www.globalreporting.org" target="_blank">
+                    <button>View Report</button>
+                </a>
+            </div>
+        </section>
     </main>
 
- 
-    
     <footer>
         <p>Contact us at: <a href="mailto:info@esgdashboard.com">info@esgdashboard.com</a></p>
         <p>&copy; 2024 ESG Matrices Dashboard</p>
@@ -64,4 +97,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
