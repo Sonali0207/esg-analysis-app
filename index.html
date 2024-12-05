@@ -3,63 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESG Matrices Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    
-    <!-- Include PapaParse for parsing CSV data -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    
-    <!-- Include Chart.js for graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Company ESG Data</title>
+    <style>
+        /* Suggestions Box Styling */
+        .suggestions {
+            position: absolute;
+            border: 1px solid #ccc;
+            background-color: white;
+            width: 100%;
+            max-height: 150px;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .suggestions li {
+            list-style: none;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .suggestions li:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#reports">Reports</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div>
+        <label for="companyName">Enter Company Name:</label>
+        <input type="text" id="companyName" placeholder="Start typing..." autocomplete="off">
+        <ul class="suggestions"></ul>
+    </div>
+    <div id="esgResult"></div>
+    <div id="chartContainer" style="display: none;">
+        <canvas id="esgChart"></canvas>
+    </div>
 
-    <main>
-        <section id="hero" class="hero-section">
-            <h1>ESG MATRICES DASHBOARD</h1>
-        </section>
-
-        <section id="info">
-            <h2>ESG Analysis Overview</h2>
-            <div class="overview-section">
-                <p><strong>Environmental Impact:</strong> The Environmental Score evaluates a company’s commitment to preserving natural resources, managing waste, reducing emissions, and utilizing renewable energy.</p>
-                <p><strong>Social Responsibility:</strong> The Social Score highlights a company’s impact on its employees, customers, and communities, measuring factors like employee satisfaction, health and safety, and workforce diversity.</p>
-                <p><strong>Governance Policies:</strong> The Governance Score focuses on ethical business practices, transparency, and strong leadership.</p>
-            </div>
-        </section>
-
-        <section id="search">
-            <h2>Search ESG Data</h2>
-            <input type="text" id="companyName" placeholder="Type company name" autocomplete="off">
-            <ul id="suggestions" class="suggestions-list"></ul>
-            <button onclick="fetchESGData()">Search</button>
-            <div id="esgResult"></div>
-        </section>
-
-        <!-- Chart container -->
-        <div id="chartContainer" style="display: none;">
-            <canvas id="esgChart" width="400" height="200"></canvas>
-        </div>
-    </main>
-
-    <!-- Tidio Chat Script -->
-    <script src="//code.tidio.co/khxk1hmdarkhdxb5nvqmwepeou0wwibf.js" async></script>
-    
-    <footer>
-        <p>Contact us at: <a href="mailto:info@esgdashboard.com">info@esgdashboard.com</a></p>
-        <p>&copy; 2024 ESG Matrices Dashboard</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <!-- Include dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script> <!-- Link to the JavaScript file -->
 </body>
 </html>
