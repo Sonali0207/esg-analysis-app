@@ -51,6 +51,39 @@
         <div id="chartContainer" style="display: none;">
             <canvas id="esgChart" width="400" height="200"></canvas>
         </div>
+
+        <!-- Reports Section (Hidden) -->
+        <section id="reports" style="display: none;">
+            <h2>ESG Reports</h2>
+            <div class="report-card">
+                <h3>Sustainalytics ESG Ratings</h3>
+                <p>Provides detailed ESG ratings and reports for various companies.</p>
+                <a href="https://www.sustainalytics.com/esg-ratings" target="_blank">
+                    <button>View Report</button>
+                </a>
+            </div>
+            <div class="report-card">
+                <h3>MSCI ESG Ratings</h3>
+                <p>Offers ESG ratings and research on companies.</p>
+                <a href="https://www.msci.com/sustainable-investing/esg-ratings" target="_blank">
+                    <button>View Report</button>
+                </a>
+            </div>
+            <div class="report-card">
+                <h3>Morningstar Sustainability Ratings</h3>
+                <p>Morningstar provides sustainability ratings for funds and companies.</p>
+                <a href="https://www.morningstar.com/research" target="_blank">
+                    <button>View Report</button>
+                </a>
+            </div>
+            <div class="report-card">
+                <h3>Global Reporting Initiative (GRI)</h3>
+                <p>The GRI provides a framework for sustainability reporting and various company reports.</p>
+                <a href="https://www.globalreporting.org" target="_blank">
+                    <button>View Report</button>
+                </a>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -63,6 +96,7 @@
         function showHome() {
             document.getElementById('home').style.display = 'block';
             document.getElementById('about').style.display = 'none';
+            document.getElementById('reports').style.display = 'none';
             document.getElementById('search').style.display = 'block';
         }
 
@@ -70,6 +104,7 @@
             // Hide all sections first
             document.getElementById('home').style.display = 'none';
             document.getElementById('about').style.display = 'none';
+            document.getElementById('reports').style.display = 'none';
             document.getElementById('search').style.display = 'none';
 
             // Show the selected section
